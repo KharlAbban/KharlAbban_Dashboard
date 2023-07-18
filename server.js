@@ -8,7 +8,17 @@ const server_port = process.env.PORT;
 app.use(express.json());
 app.use(express.static("frontend"));
 const IPGEOLOC_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.IPGEOLOC_API_KEY}`;
+const notesRouter = require("./routes/notes_route");
+const playgroundRouter = require("./routes/playground_route");
+const profileRouter = require("./routes/profile_route");
+const projectsRouter = require("./routes/projects_route");
+const whatsnewRouter = require("./routes/whatsnew_route");
 
+app.use("/notes", notesRouter);
+app.use("/playground", playgroundRouter);
+app.use("/profile", profileRouter);
+app.use("/projects", projectsRouter);
+app.use("/whats_new", whatsnewRouter);
 app.listen(server_port || "3000", () => {
   console.log("Server is running!");
 });
