@@ -1,0 +1,3 @@
+# Hi! I'm Er-Carl.
+## This is my first web app project with NodeJS
+This is just the start. More to come ...
