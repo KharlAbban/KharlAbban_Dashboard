@@ -1,16 +1,57 @@
-<h1>Login Page</h1>
-<% if (messages.error) { %>
-  <%= messages.error %>
-    <% } %>
-      <form action="/login" method="post">
-        <div>
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Landing Page - KharlAbban</title>
+  <link rel="stylesheet" href="/styles/login.css" />
+  <script src="/scripts/login.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div class="col1">
+      <div class="stuffing">
+        <h1><u>Welcome,</u> to groundUP</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis
+          nemo <br />nostrum fugiat similique repellendus mollitia officia
+          minus reprehenderit quam odio!
+        </p>
+        <button class="login-btn">LogIn >></button>
+      </div>
+    </div>
+    <div class="col2">
+      <div class="col-container">
+        <div class="img-container">
+          <img src="../images/headphone.png" alt="" />
         </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password">
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      <a href="/register">Register Here</a>
+        <section class="form-section">
+          <div class="formwrapper">
+            <h1>Log In</h1>
+            <form autocomplete="off">
+              <div class="container">
+                <input name="email" type="email" placeholder="Email Address" autocomplete="off" id="email">
+              </div>
+              <div class="email error"></div>
+              <div class="container" id="useWidth">
+                <img src="../images/lock-icon.svg" id="lock">
+                <input name="password" type="password" placeholder="Password" autocomplete="off" id="password">
+                <div id="eye-wrapper">
+                  <img src="../images/eye-open.svg" id="open">
+                  <img src="../images/eye-close.svg" id="close">
+                </div>
+              </div>
+              <div class="password error"></div>
+              <button type="submit" class="loginsubtn">Continue...</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

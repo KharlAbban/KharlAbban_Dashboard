@@ -2,187 +2,184 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sidebar Dropdown Menu</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Dropdown Menu</title>
 
-  <!-- Box Icons  -->
-  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="shortcut icon" href="../images/kxp_fav.png" type="image/x-icon">
-  <!-- Styles  -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/styles/index.css">
-  <!-- Link JS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-  <script src="/scripts/index.js" defer></script>
+    <!-- Box Icons  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="../images/kxp_fav.png" type="image/x-icon">
+    <!-- Styles  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/styles/index.css">
+    <!-- Link JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="/scripts/index.js" defer></script>
 </head>
 
 <body>
-  <div class="sidebar close">
-    <!-- ========== Logo ============  -->
-    <a href="#" class="logo-box">
-      <i class='bx bxl-xing'></i>
-      <div class="logo-name">yourLogo</div>
-    </a>
-    <!-- ========== List ============  -->
-    <ul class="sidebar-list">
-      <!-- -------- Non Dropdown List Item ------- -->
-      <li>
-        <div class="title">
-          <a href="#" class="link">
-            <i class='bx bx-grid-alt'></i>
-            <span class="name">Dashboard</span>
-          </a>
-          <!-- <i class='bx bxs-chevron-down'></i> -->
-        </div>
-        <div class="submenu">
-          <a href="#" class="link submenu-title">Dashboard</a>
-          <!-- submenu links here  -->
-        </div>
-      </li>
+    <div class="sidebar close">
+        <!-- ========== Logo ============  -->
+        <a href="#" class="logo-box">
+            <i class='bx bxl-xing'></i>
+            <div class="logo-name">yourLogo</div>
+        </a>
+        <!-- ========== List ============  -->
+        <ul class="sidebar-list">
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="name">Dashboard</span>
+                    </a>
+                    <!-- <i class='bx bxs-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Dashboard</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
 
-      <!-- -------- Dropdown List Item ------- -->
-      <li class="dropdown">
-        <div class="title">
-          <a href="#" class="link">
-            <i class='bx bx-collection'></i>
-            <span class="name">Category</span>
-          </a>
-          <i class='bx bxs-chevron-down'></i>
-        </div>
-        <div class="submenu">
-          <a href="#" class="link submenu-title">Category</a>
-          <a href="#" class="link">HTML & CSS</a>
-          <a href="#" class="link">JavaScript</a>
-          <a href="#" class="link">PHP & MySQL</a>
-        </div>
-      </li>
+            <!-- -------- Dropdown List Item ------- -->
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-collection'></i>
+                        <span class="name">Category</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Category</a>
+                    <a href="#" class="link">HTML & CSS</a>
+                    <a href="#" class="link">JavaScript</a>
+                    <a href="#" class="link">PHP & MySQL</a>
+                </div>
+            </li>
 
-      <!-- -------- Dropdown List Item ------- -->
-      <li class="dropdown">
-        <div class="title">
-          <a href="#" class="link">
-            <i class='bx bx-book-alt'></i>
-            <span class="name">Posts</span>
-          </a>
-          <i class='bx bxs-chevron-down'></i>
-        </div>
-        <div class="submenu">
-          <a href="#" class="link submenu-title">Posts</a>
-          <a href="#" class="link">Web Design</a>
-          <a href="#" class="link">Login Form</a>
-          <a href="#" class="link">Card Design</a>
-        </div>
-      </li>
+            <!-- -------- Dropdown List Item ------- -->
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-book-alt'></i>
+                        <span class="name">Posts</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Posts</a>
+                    <a href="#" class="link">Web Design</a>
+                    <a href="#" class="link">Login Form</a>
+                    <a href="#" class="link">Card Design</a>
+                </div>
+            </li>
 
-      <!-- -------- Non Dropdown List Item ------- -->
-      <li>
-        <div class="title">
-          <a href="#" class="link">
-            <i class='bx bx-line-chart'></i>
-            <span class="name">Analytics</span>
-          </a>
-          <!-- <i class='bx bxs-chevron-down'></i> -->
-        </div>
-        <div class="submenu">
-          <a href="#" class="link submenu-title">Analytics</a>
-          <!-- submenu links here  -->
-        </div>
-      </li>
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-line-chart'></i>
+                        <span class="name">Analytics</span>
+                    </a>
+                    <!-- <i class='bx bxs-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Analytics</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
 
-      <!-- -------- Non Dropdown List Item ------- -->
-      <li>
-        <div class="title">
-          <a href="#" class="link">
-            <i class='bx bx-pie-chart-alt-2'></i>
-            <span class="name">Chart</span>
-          </a>
-          <!-- <i class='bx bxs-chevron-down'></i> -->
-        </div>
-        <div class="submenu">
-          <a href="#" class="link submenu-title">Chart</a>
-          <!-- submenu links here  -->
-        </div>
-      </li>
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-pie-chart-alt-2'></i>
+                        <span class="name">Chart</span>
+                    </a>
+                    <!-- <i class='bx bxs-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Chart</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
 
-      <!-- -------- Dropdown List Item ------- -->
-      <li class="dropdown">
-        <div class="title">
-          <a href="#" class="link">
-            <i class='bx bx-extension'></i>
-            <span class="name">Plugins</span>
-          </a>
-          <i class='bx bxs-chevron-down'></i>
-        </div>
-        <div class="submenu">
-          <a href="#" class="link submenu-title">Plugins</a>
-          <a href="#" class="link">UI Face</a>
-          <a href="#" class="link">Pigments</a>
-          <a href="#" class="link">Box Icons</a>
-        </div>
-      </li>
+            <!-- -------- Dropdown List Item ------- -->
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-extension'></i>
+                        <span class="name">Plugins</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Plugins</a>
+                    <a href="#" class="link">UI Face</a>
+                    <a href="#" class="link">Pigments</a>
+                    <a href="#" class="link">Box Icons</a>
+                </div>
+            </li>
 
-      <!-- -------- Non Dropdown List Item ------- -->
-      <li>
-        <div class="title">
-          <a href="#" class="link">
-            <i class='bx bx-compass'></i>
-            <span class="name">Explore</span>
-          </a>
-          <!-- <i class='bx bxs-chevron-down'></i> -->
-        </div>
-        <div class="submenu">
-          <a href="#" class="link submenu-title">Explore</a>
-          <!-- submenu links here  -->
-        </div>
-      </li>
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-compass'></i>
+                        <span class="name">Explore</span>
+                    </a>
+                    <!-- <i class='bx bxs-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Explore</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
 
-      <!-- -------- Non Dropdown List Item ------- -->
-      <li>
-        <div class="title">
-          <a href="#" class="link">
-            <i class='bx bx-history'></i>
-            <span class="name">History</span>
-          </a>
-          <!-- <i class='bx bxs-chevron-down'></i> -->
-        </div>
-        <div class="submenu">
-          <a href="#" class="link submenu-title">History</a>
-          <!-- submenu links here  -->
-        </div>
-      </li>
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-history'></i>
+                        <span class="name">History</span>
+                    </a>
+                    <!-- <i class='bx bxs-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">History</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
 
-      <!-- -------- Non Dropdown List Item ------- -->
-      <li>
-        <div class="title">
-          <a href="#" class="link">
-            <i class='bx bx-cog'></i>
-            <span class="name">Settings</span>
-          </a>
-          <!-- <i class='bx bxs-chevron-down'></i> -->
-        </div>
-        <div class="submenu">
-          <a href="#" class="link submenu-title">Settings</a>
-          <!-- submenu links here  -->
-        </div>
-      </li>
-    </ul>
-  </div>
-  <!-- ============= Home Section =============== -->
-  <section class="home px-2 py-3">
-    Lorem ipsum dolor sit amet consectetur.
-
-    <h1>This is the homepage</h1>
-    <h2>Welcome, <%= name %>
-    </h2>
-    <form action="/logout?_method=DELETE" method="post">
-      <button type="submit">Logout</button>
-    </form>
-  </section>
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-cog'></i>
+                        <span class="name">Settings</span>
+                    </a>
+                    <!-- <i class='bx bxs-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Settings</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- ============= Home Section =============== -->
+    <section class="home px-2 py-3">
+        <% if (username) { %>
+            <h1>Welcome, <%= username.fullname %>
+            </h1>
+            <h2><a href="/logout">Logout</a></h2>
+            <% } %>
+    </section>
 
 </body>
 

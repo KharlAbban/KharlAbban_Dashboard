@@ -1,83 +1,33 @@
-if (process.env.NODE_ENV !== "production") {require("dotenv").config()}
-const flash = require("express-flash");
-const methodOverride = require("method-override");
-const expressSession = require("express-session");
-const initPassport = require("./src/passport-config");
-const bcrypt = require("bcrypt");
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+const morgan = require("morgan");
 const express = require("express");
-const passport = require("passport");
 const app = express();
-const PORT_NO = process.env.PORT;
-const users = [];
+const registerRoute = require("./src/routes/registerRoute");
+const loginRoute = require("./src/routes/loginRoute");
+const logoutRoute = require("./src/routes/logoutRoute");
+const indexRoute = require("./src/routes/indexRoute");
+const mongoose = require("mongoose");
 
-initPassport(
-  passport,
-  email => users.find(user => user.email === email),
-  id => users.find(user => user.id === id)
-  );
-app.use(expressSession({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
-}));
+app.use(morgan("dev"));
+app.use("/", indexRoute);
+app.use("/register", registerRoute);
+app.use("/login", loginRoute);
+app.use("/logout", logoutRoute);
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
-app.use(methodOverride("_method"));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
-app.use(express.urlencoded({extended: false}));
-app.set("view engine", "ejs");
 app.set("views", "./src/views");
+app.set("view engine", "ejs");
 
-app.listen(PORT_NO, () => console.log(`Listening on port ${PORT_NO}`));
-
-app.get("/", checkAuthenticated, (req, res) => {
-  res.render("index", {name: req.user.name});
-});
-app.get("/register", checkNotAuthenticated, (req, res) => {
-  res.render("register");
-});
-app.get("/login", checkNotAuthenticated, (req, res) => {
-  res.render("login");
-});
-
-app.post("/register", checkNotAuthenticated, async (req, res) => {
+async function connectDB () {
   try {
-    const hashedPwd = await bcrypt.hash(req.body.password, 10); //hashes pwd
-    const newUser = {
-      id: Date.now().toString(),
-      name: req.body.name,
-      email: req.body.email,
-      password: hashedPwd
-    }
-    users.push(newUser);
-    res.redirect("/login");
-  } catch (err) {
-    res.redirect("/register");
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log(`Connected to MongoDB Database`);
+    app.listen(process.env.PORT, () => console.log(`Listening on server port!`));
+  } catch (error) {
+    return error;
   }
-});
-app.post("/login", checkNotAuthenticated, passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/login",
-  failureFlash: true
-}));
-
-app.delete("/logout", (req, res, next) => {
-  req.logOut((err) => {
-    if (err) {return next(err);}
-  });
-  res.redirect("/login");
-});
-
-function checkAuthenticated (req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect("/login");
 }
-function checkNotAuthenticated (req, res, next) {
-  if (req.isAuthenticated()) {
-    return res.redirect("/");
-  }
-  next();
-}
+connectDB();
