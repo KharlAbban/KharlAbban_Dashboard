@@ -4,7 +4,7 @@ const { createJWTToken, maxAge } = require("../middleware/jwtFunctions");
 const { handleLoginErrors } = require("../middleware/errorFunctions");
 
 function showLoginPage (req, res) {
-    res.render("login");
+    res.render("login", {layout: "layouts/defaultLayout"});
 }
 
 async function loginUser (req, res) {

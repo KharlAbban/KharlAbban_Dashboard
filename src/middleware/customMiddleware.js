@@ -26,6 +26,8 @@ function checkCurrentUser (req, res, next) {
   }
 }
 
+// function () {}
+
 module.exports = {
   checkCurrentUser
 }

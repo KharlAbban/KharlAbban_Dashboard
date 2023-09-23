@@ -8,7 +8,7 @@ const { handleRegisterErrors } = require("../middleware/errorFunctions");
 //Route Controllers
 
 function showRegisterPage (req, res) {
-    res.render("register");
+    res.render("register", {layout: "layouts/defaultLayout"});
 }
 
 //POST request handler to create new user

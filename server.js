@@ -1,27 +1,30 @@
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
+const expressLayouts = require("express-ejs-layouts");
 const morgan = require("morgan");
 const express = require("express");
 const app = express();
 const registerRoute = require("./src/routes/registerRoute");
 const loginRoute = require("./src/routes/loginRoute");
 const logoutRoute = require("./src/routes/logoutRoute");
-const indexRoute = require("./src/routes/indexRoute");
+const homeRoute = require("./src/routes/homeRoute");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
+app.use(expressLayouts);
 app.use(cookieParser());
 app.use(morgan("dev"));
-app.use("/", indexRoute);
+app.use("/home", homeRoute);
 app.use("/register", registerRoute);
 app.use("/login", loginRoute);
 app.use("/logout", logoutRoute);
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
-app.set("views", "./src/views");
+app.set("views", __dirname + "/src/views");
 app.set("view engine", "ejs");
+app.set("layout", "layouts/mainLayout");
 
 async function connectDB () {
   try {
@@ -35,5 +38,5 @@ async function connectDB () {
 connectDB();
 
 app.get("*", (req, res) => {
-  res.render("errors/404");
+  res.render("errors/normal_404", {layout: "layouts/defaultLayout"});
 });

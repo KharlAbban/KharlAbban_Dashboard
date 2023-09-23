@@ -213,6 +213,14 @@ a {
     left: 70px;
     width: calc(100% - 70px);
 }
+.new {
+  height: 120vh;
+  width: 300px;
+  background-color: aqua;
+}
+.home::-webkit-scrollbar {
+  display: none;
+}
 
 
 

@@ -36,8 +36,7 @@ form.addEventListener("submit", async (Event) => {
       passwordError.textContent = data.errorsFound.password;
     }
     if (data.user) {
-      location.assign("/");
-      alert("Success!");
+      location.assign("/home");
     }
   } catch (err) {
     console.log(err);
