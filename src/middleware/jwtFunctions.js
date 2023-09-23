@@ -13,21 +13,23 @@ function createJWTToken (id) {
 
 // Function to check and authenticate JWT
 function requiresAuth(req, res, next) {
-    // Grab token from cookie
-    const token = req.cookies.jwt;
+    if (req.cookies) {console.log(req.cookies);}
+    // if (!req.cookies) res.redirect("/login");
+    // // Grab token from cookie
+    // const token = req.cookies.jwt;
 
-    // Check if token exists and validate
-    if (token) {
-        jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
-            if (err) {
-                res.redirect("/login");
-            } else {
-                next();
-            }
-        });
-    } else {
-        res.redirect("/login");
-    }
+    // // Check if token exists and validate
+    // if (token) {
+    //     jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
+    //         if (err) {
+    //             res.redirect("/login");
+    //         } else {
+    //             next();
+    //         }
+    //     });
+    // } else {
+    //     res.redirect("/login");
+    // }
 }
 
 module.exports = {

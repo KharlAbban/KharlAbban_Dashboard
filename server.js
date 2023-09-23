@@ -9,7 +9,9 @@ const loginRoute = require("./src/routes/loginRoute");
 const logoutRoute = require("./src/routes/logoutRoute");
 const indexRoute = require("./src/routes/indexRoute");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
+app.use(cookieParser());
 app.use(morgan("dev"));
 app.use("/", indexRoute);
 app.use("/register", registerRoute);
@@ -31,3 +33,7 @@ async function connectDB () {
   }
 }
 connectDB();
+
+app.get("*", (req, res) => {
+  res.render("errors/404");
+});

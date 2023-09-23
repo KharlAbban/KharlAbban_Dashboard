@@ -1,5 +1,6 @@
 function showDashboard(req, res) {
-    res.render("index");
+  console.log(req.cookies);
+  res.render("index");
 }
 
 module.exports = {
