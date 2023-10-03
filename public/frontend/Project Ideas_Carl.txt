@@ -1,0 +1,78 @@
+Current Problems with eating out
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Food is yet to be cooked
+Food is still cooking or is not ready
+There are a lot of people to be served
+There are few waiters/waitresses
+There might be a long queue
+Food takes a long time after ordering
+Long wait time before you can pay for your food
+The prices of the foods might not be known or clearly stated
+The business wastes a lot of money if they want to update their menu(especially big restaurants), since they have to reprint the whole menu
+Customers cannot see the menu beforehand, eg. at the reception
+Pressure on cook when there are many orders, i.e he has to review them manually
+
+Benefits of the project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To address the most important and crucial problems stated above.
+Mainly to speed up ordering and payment.
+Customers can relax, and socialise without worrying about thier bill
+Creation of a "locally hosted"(under consideration) web app for a restaurant/food service business.
+The web app's main aim is to fix the above stated problems.
+Businesses must be able to easily modify their menu, choose accepted payment methods, customise QR Code.
+Businesses can choose to store customer data, payment info, general info, etc.
+
+Features the project can have
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Integration with various banks and mobile telecom companies, eg. GCB, ABSA, MTN, Vodafone, etc
+Businesses can customise the QR code with their own logo or brand
+Menu should display new items, menu updates, and promotions
+Payment option should be static until order has been paid for
+On scanning, each device could be given a unique ID and can be used to record customer details(name, number)
+The unique ID could expire and log out the customer some time after paying, maybe 2 minutes after paying
+The customer must not have access after leaving the premises
+Can remember the customer when they come next time
+Real-time order status
+See food status: out-of-stock, in-stock, being cooked, not available, etc
+Should be able to handle multiple users well
+Rate foods or see ratings by other customers
+Kitchen or admin can send out a notice to the customers through the menu, eg. to expect delays
+Grey out or blank out food not available or finished(add a notice that its finished)
+See wait time for food ordered
+Admin should be able to tell who has finished paying, who has not and current customer status
+Menu should allow you to change your order
+Re-order after paying or eating
+Recognize users who have not paid but have stepped out temporarily
+
+
+Extra Menu Features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Business can customise the them, look and feel of their menu
+Menu includes picture of how the food cooked actually looks like
+Might show a short reel or video on how to eat the food, especially for international dishes
+Should show the different types of food, drinks,etc.
+Admin can see the table or section ordering the food/drinks
+Depending on the food, you can choose how spicy or sweet it should be
+Should be able to selct side dishes to the main food, eg salad, ketchup, mayo, ginger(for pepper soup) etc
+Suggest drinks with the food ordered
+Cannot order after restaurant closes but can only view the menu
+You can just open and have a look at the menu without ordering
+
+
+
+
+
+*****************************************************************************************
+*****************************************************************************************
+
+These are some ideas I thought about after reviewing the project. Most of the features
+are ones that will likely be implemented later. I added them to broaden our view. Please look
+through. I added plenty things too so please feel free to summarise what we'll NEED NOW, so
+we can start work on those ones. If you guys have any more ideas, please add them or make a list.
+I will also speak to others about some challenges they face while eating out so we can have
+more info.
+
+Thank you!
+
+*****************************************************************************************
+*****************************************************************************************

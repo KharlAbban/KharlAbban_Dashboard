@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== "production") require("dotenv").config()
 // Import jwt
 const jwt = require("jsonwebtoken");
-const maxAge = 3*24*60*60;
+const maxAge = 24*60*60;
 
 // JWT Handler Functions
 // JWT Creation Function

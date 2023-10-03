@@ -1,172 +1,168 @@
-/* Google Fonts  */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-/* Globals  */
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-}
-
-/* Variables  */
-:root{
+:root {
     --color_Blue: #3f93f1;
     --color_Dark1: #1e1e1e;
     --color_Dark2: #252527;
     --color_Light1: #dfdfdf;
     --color_Light2: #c4c4c4;
-}
-body {
-    background: var(--color_Dark1);
-    display: flex;
-    gap: 0;
-    overflow: hidden;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-}
-a {
+    overflow: hidden;
+  }
+  a {
     text-decoration: none;
-}
-/* =============== Sidebar =============== */
-.sidebar{
+  }
+  
+  /* =============== Sidebar =============== */
+  .sidebar{
     height: 100%;
     width: 240px;
     background-color: var(--color_Dark1);
     transition: all .5s ease;
     z-index: 100;
-}
-.sidebar.close{
+  }
+  .sidebar.close{
     width: 70px;
-}
-
-/* --------- Logo ------------ */
-.logo-box{
+  }
+  
+  /* --------- Logo ------------ */
+  .logo-box{
     height: 50px;
     width: 100%;
     display: flex;
     align-items: center;
     color: var(--color_Light1);
     transition: all .5s ease;
-}
-.logo-box:hover{
+    border-bottom: 1px solid var(--color_Light1);
+  }
+  .logo-box:hover{
     color: var(--color_Blue);
-}
-.logo-box i{
+  }
+  .logo-box:hover .logo-name{
+    font-size: 24px;
+  }
+  .logo-box i{
     font-size: 30px;
     height: 50px;
     min-width: 70px;
     text-align: center;
     line-height: 50px;
     transition: all .5s ease;
-}
-.sidebar .logo-name{
+  }
+  .sidebar .logo-name{
     font-size: 22px;
     font-weight: 600;
     opacity: 1;
     width: 100%;
-    transition: all 1s ease;
-}
-
-/* ---------- Sidebar List ---------- */
-.sidebar-list{
+    transition: all 0.5s ease;
+  }
+  
+  /* ---------- Sidebar List ---------- */
+  .sidebar-list{
     height: 100%;
     padding: 10px 0 150px 0;
     overflow: auto;
-}
-.sidebar-list::-webkit-scrollbar{
+  }
+  .sidebar-list::-webkit-scrollbar{
     display: none;
-}
-.sidebar-list li{
+  }
+  .sidebar-list li{
     transition: all .5s ease;
-}
-.sidebar-list li:hover{
+  }
+  .sidebar-list li:hover{
     background-color: var(--color_Dark2);
-}
-.sidebar-list li .title{
+  }
+  .sidebar-list li .title{
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all .5s ease;
     cursor: pointer;
-}
-.sidebar-list li.active .title{
+  }
+  .sidebar-list li.active .title{
     background-color: var(--color_Blue);
-}
-.sidebar-list li.active .bxs-chevron-down{
+  }
+  .sidebar-list li.active .bxs-chevron-down{
     transition: all .5s ease;
     transform: rotate(180deg);
-}
-.sidebar-list li .title .link{
+  }
+  .sidebar-list li .title .link{
     display: flex;
     align-items: center;
-}
-.sidebar-list li .title i{
+  }
+  .sidebar-list li .title i{
     height: 50px;
     min-width: 70px;
     text-align: center;
     line-height: 50px;
     color: var(--color_Light1);
     font-size: 20px;
-}
-.sidebar-list li .title .name{
+  }
+  .sidebar-list li .title .name{
     font-size: 18px;
     font-weight: 400;
     color: var(--color_Light1);
-}
-
-/* ---------------- Submenu ------------- */
-.sidebar-list li .submenu{
+  }
+  
+  /* ---------------- Submenu ------------- */
+  .sidebar-list li .submenu{
     width: 0;
     height: 0;
-    opacity: 0;
+    overflow: hidden;
+    display: none;
     transition: all .5s ease;
-}
-.sidebar-list li.dropdown.active .submenu{
+  }
+  .sidebar-list li.dropdown.active .submenu{
     width: unset;
     height: unset;
-    opacity: 1;
     display: flex;
     flex-direction: column;
     padding: 6px 6px 6px 80px;
     background-color: var(--color_Dark2);
-}
-.submenu .link{
+    transition: all .5s ease;
+  }
+  .submenu .link{
     color: var(--color_Light2);
     font-size: 15px;
     padding: 5px 0;
     transition: all .5s ease;
-}
-.submenu .link:hover{
+  }
+  .submenu .link:hover{
     color: #fff;
-}
-.submenu-title{
+  }
+  .submenu-title{
     display: none;
-}
-
-/* ---------------- Submenu Close ------------- */
-.sidebar.close .title .name,
-.sidebar.close .title .bxs-chevron-down
-{
+  }
+  
+  /* ---------------- Submenu Close ------------- */
+  .sidebar.close .title .name,
+  .sidebar.close .title .bxs-chevron-down
+  {
     display: none;
-}
-.sidebar.close .logo-name {
+  }
+  .sidebar.close .logo-name {
     width: 0;
     opacity: 0;
     transition: 0.3s ease;
-}
-.sidebar.close .sidebar-list{
+  }
+  .sidebar.close .sidebar-list{
     overflow: visible;
-}
-.sidebar.close .sidebar-list li{
+  }
+  .sidebar.close .sidebar-list li{
     position: relative;
-}
-.sidebar.close .sidebar-list li .submenu{
+  }
+  .sidebar.close .sidebar-list li .submenu{
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -180,64 +176,60 @@ a {
     opacity: 0;
     transition: all .5s ease;
     pointer-events: none;
-}
-.sidebar.close .sidebar-list li:hover .submenu{
+  }
+  .sidebar.close .sidebar-list li:hover .submenu{
     opacity: 1;
     top: 0;
     pointer-events: initial;
     background-color: var(--color_Dark2);
-}
-.sidebar.close .submenu-title{
+  }
+  .sidebar.close .submenu-title{
     display: block;
     font-style: 18px;
     color: var(--color_Light1);
-}
-
-/* =============== Home Section =============== */
-.home{
+  }
+  
+  /* Main Page Content */
+  .home {
     padding: 1rem 0.5rem;
     color: #fff;
     border: 1px solid #aaaaaa;
     margin: 15px;
-    margin-left: 0;
-    /* background-color: var(--color_Light1); */
-    background: url("../images/mike-kenneally-TD4DBagg2wE-unsplash.jpg") center no-repeat;
-    background-size: cover;
-    background-blend-mode: overlay;
+    background-color: var(--color_Light1);
     left: 240px;
     width: calc(100% - 240px);
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     border-radius: 15px;
-}
-.sidebar.close ~ .home{
+  }
+  .sidebar.close ~ .home {
     left: 70px;
     width: calc(100% - 70px);
-}
-.new {
-  height: 120vh;
-  width: 300px;
-  background-color: aqua;
-}
-.home::-webkit-scrollbar {
-  display: none;
-}
-
-
-
-/* ============ Responsive / Breakpoints ========== */
-@media (max-width: 1080px){
-    
-}
-
-/* For Medium Devices */
-@media (max-width: 774px){
-   
-}
-@media (max-width: 560px){
-    
-}
-
-/* For Small Devices */
-@media (max-width: 360px){
-   
-}
+  }
+  
+  .h-70 {
+    height: 70% !important;
+  }
+  .h-20 {
+    height: 20% !important;
+  }
+  .h-10 {
+    height: 10% !important;
+  }
+  
+  
+  /* For Medium Screens */
+  @media (max-width: 768px){
+    .home {
+      left: 0;
+      width: 100% !important;
+    }
+    .sidebar.close ~ .home {
+      left: 0;
+      width: 100% !important;
+    }
+    .pageContainer {
+      height: calc(100% - 56px) !important;
+      top: 56px;
+      position: absolute;
+    }
+  }
