@@ -28,8 +28,8 @@ app.set("layout", "layouts/mainLayout");
 
 async function connectDB () {
   try {
-    // await mongoose.connect(process.env.MONGODB_URI);
-    // console.log(`Connected to MongoDB Database`);
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log(`Connected to MongoDB Database`);
     app.listen(process.env.PORT, () => console.log(`Listening on server port!`));
   } catch (error) {
     return error;
