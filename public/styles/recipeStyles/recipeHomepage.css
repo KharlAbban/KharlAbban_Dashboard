@@ -36,3 +36,34 @@
 }
 
 /* End ofSearch Box Styles */
+
+.category_link {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    transition: 0.3s all;
+}
+
+.category_link:hover {
+    transform: scale(0.98);
+}
+
+.category_img {
+    border-radius: 10px;
+    height: 100px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.category_img_large {
+    height: 300px;
+}
+
+.category_img.category_img_large:hover {
+    transform: scale(0.98) !important;
+}
+
+.category_img img {
+    width: 100%;
+    object-fit: cover;
+}

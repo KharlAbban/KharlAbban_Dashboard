@@ -1,0 +1,25 @@
+<h1 class="pb-2 display-4 fw-700 text-center">Explore All Categories</h1>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/home">Dashboard</a></li>
+        <li class="breadcrumb-item active">Explore All Categories</li>
+    </ol>
+</nav>
+
+<!-- Categories Start -->
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+    <!-- Category Card -->
+    <% if (categoriesObj !="" ) { %>
+        <% categoriesObj.forEach((category, index)=> { %>
+            <a href="/home/recipes/categories/<%- category.name %>" class="col text-center category_link">
+                <div class="category_img shadow d-flex align-items-center justify-content-center mb-2">
+                    <img src="/images/<%- category.image %>" class="img-fluid" loading="lazy"
+                        alt="<%- category.name %>" />
+                </div>
+                <h6 class="pt-1"><%- category.name %></h6>
+            </a>
+            <% }) %>
+                <% } %>
+                    <!-- End of Card -->
+</div>
+<!-- Categories End -->

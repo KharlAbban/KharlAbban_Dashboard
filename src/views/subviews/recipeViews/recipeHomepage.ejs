@@ -1,11 +1,163 @@
 <div class="container-xxl px-md-4">
-    <header class="d-flex flex-wrap align-items-center justify-content-end justify-content-md-between mb-4 pb-1 border-black border-bottom">
-        <a href="/home/recipes" class="d-none d-md-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-            <img src="/images/logo.svg" width="229" height="68" alt="Kharleats Homepage">
-        </a>
-        <div class="search float-end">
-        <i class="bx bx-search bx-sm"></i>
-        <input type="search" name="search" id="" placeholder="Find something...">
+  <!-- Header Section -->
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-end justify-content-md-between mb-4 pb-1 border-black border-bottom">
+    <a href="/home/recipes"
+      class="d-none d-md-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img src="/images/logo.svg" width="229" height="68" alt="Kharleats Homepage" />
+    </a>
+    <%- include('../../partials/searchBar.ejs') %>
+  </header>
+  <!-- Jumbotron Start -->
+  <section class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+      <img src="/images/hero-image.png" width="570" height="440" alt="" class="d-block mx-lg-auto img-fluid"
+        loading="lazy" />
+    </div>
+    <div class="col-12 col-lg-6">
+      <h1 class="display-4 fw-bold">
+        Varied Selection of delicious recipe ideas
+      </h1>
+      <p class="lead">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
+        commodi quae modi tempora enim accusantium ipsum aspernatur praesentium
+        voluptatibus possimus?
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-start">
+        <a href="/home/recipes/latest" class="btn btn-primary btn-lg px-4 me-md-2">Latest Recipes</a>
+        <a href="/home/recipes/random" class="btn btn-outline-dark btn-lg px-4 me-md-2">Choose Random</a>
       </div>
-    </header>
+    </div>
+  </section>
+  <!-- Jumbotron End -->
+  <!-- Categories Start -->
+  <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+    <!-- Category Card -->
+    <% if (categoriesObj !="" ) { %>
+      <% categoriesObj.forEach((category, index)=> { %>
+        <a href="/home/recipes/categories/<%- category.name %>" class="col text-center category_link">
+          <div class="category_img shadow d-flex align-items-center justify-content-center mb-2">
+            <img src="/images/<%- category.image %>" class="img-fluid" loading="lazy" alt="<%- category.name %>" />
+          </div>
+          <h6 class="pt-1"><%- category.name %></h6>
+        </a>
+        <% }) %>
+          <% } %>
+            <!-- End of Card -->
+            <!-- Category Card -->
+            <a href="/home/recipes/categories" class="col text-center category_link">
+              <div class="category_img shadow d-flex align-items-center justify-content-center mb-2">
+                <img src="/images/view-all.jpg" class="img-fluid" loading="lazy" alt="View All Categories" />
+              </div>
+              <h6 class="pt-1">View All Categories</h6>
+            </a>
+            <!-- End of Card -->
+  </div>
+  <!-- Categories End -->
+  <!-- Latest Section -->
+  <div class="py-3">
+    <div class="d-flex mb-2 align-items-center">
+      <h3>Latest Recipes</h3>
+      <a class="ms-auto" href="/home/recipes/latest">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if (foodObj.latestRecipesObj !="" ) { %>
+      <% foodObj.latestRecipesObj.forEach((recipe, index)=> { %>
+          <a href="/home/recipes/recipe/<%- recipe._id %>" class="col text-center category_link">
+            <div class="category_img shadow category_img_large">
+              <img src="/uploads/<%- recipe.image %>" alt="<%- recipe.name %>" loading="lazy" />
+            </div>
+            <h5 class="pt-1"><%- recipe.name %></h5>
+          </a>
+          <% }) %>
+          <% } %>
+    </div>
+  </div>
+  <!-- End of Latest -->
+  <!-- Thai Recipes -->
+  <div class="py-3">
+    <div class="d-flex mb-2 align-items-center">
+      <h3>Thai Recipes</h3>
+      <a class="ms-auto" href="/home/recipes/thai">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if (typeof foodObj.thaiRecipesObj !== "undefined" && foodObj.thaiRecipesObj.length > 0) { %>
+      <% foodObj.thaiRecipesObj.forEach((recipe, index)=> { %>
+          <a href="/home/recipes/recipe/<%- recipe._id %>" class="col text-center category_link">
+            <div class="category_img shadow category_img_large">
+              <img src="/uploads/<%- recipe.image %>" alt="<%- recipe.name %>" loading="lazy" />
+            </div>
+            <h5 class="pt-1"><%- recipe.name %></h5>
+          </a>
+          <% }) %>
+          <% } else { %>
+            <p>No recipes found for Thai dishes</p>
+          <% } %>
+    </div>
+  </div>
+  <!-- End of Thai -->
+  <!-- American Recipes -->
+  <div class="py-3">
+    <div class="d-flex mb-2 align-items-center">
+      <h3>American Recipes</h3>
+      <a class="ms-auto" href="/home/recipes/american">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if (typeof foodObj.americanRecipesObj !== "undefined" && foodObj.americanRecipesObj.length > 0) { %>
+      <% foodObj.americanRecipesObj.forEach((recipe, index)=> { %>
+          <a href="/home/recipes/recipe/<%- recipe._id %>" class="col text-center category_link">
+            <div class="category_img shadow category_img_large">
+              <img src="/uploads/<%- recipe.image %>" alt="<%- recipe.name %>" loading="lazy" />
+            </div>
+            <h5 class="pt-1"><%- recipe.name %></h5>
+          </a>
+          <% }) %>
+          <% } else { %>
+            <p>No recipes found for American dishes</p>
+          <% } %>
+    </div>
+  </div>
+  <!-- End of American -->
+  <!-- Mexican Recipes -->
+  <div class="py-3">
+    <div class="d-flex mb-2 align-items-center">
+      <h3>Mexican Recipes</h3>
+      <a class="ms-auto" href="/home/recipes/mexican">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if (typeof foodObj.mexicanRecipesObj !== "undefined" && foodObj.mexicanRecipesObj.length > 0) { %>
+      <% foodObj.mexicanRecipesObj.forEach((recipe, index)=> { %>
+          <a href="/home/recipes/recipe/<%- recipe._id %>" class="col text-center category_link">
+            <div class="category_img shadow category_img_large">
+              <img src="/uploads/<%- recipe.image %>" alt="<%- recipe.name %>" loading="lazy" />
+            </div>
+            <h5 class="pt-1"><%- recipe.name %></h5>
+          </a>
+          <% }) %>
+          <% } else { %>
+            <p>No Recipes Found for Mexican dishes </p>
+          <% } %>
+    </div>
+  </div>
+  <!-- End of Mexican -->
+
+  <!-- Submit Recipe Section -->
+  <div class="py-5 px-3 my-4 text-center">
+    <img loading="lazy" src="/images/publish-recipe.png" height="208" width="550" class="d-block mx-auto mb-3 img-fluid"
+      alt="Publish Your Recipe" />
+    <h2 class="dislay-3 fw-bold">Publish Your Recipe for FREE now!</h2>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-3">
+        Add your recipe here and get a FREE BACKLINK to your website or blog!
+      </p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="/home/recipes/submit-recipe" class="btn btn-primary btn-dark btn-lg">Submit Recipe</a>
+      </div>
+    </div>
+  </div>
+  <!-- End of Submit Section -->
 </div>

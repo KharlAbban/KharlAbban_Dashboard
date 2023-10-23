@@ -33,7 +33,7 @@ a {
   width: 240px;
   background-color: var(--color_Dark1);
   transition: all .5s ease;
-  z-index: 100;
+  z-index: 2000;
 }
 
 .sidebar.close {
@@ -226,6 +226,11 @@ a {
   width: calc(100% - 240px);
   transition: all 0.5s ease;
   border-radius: 15px;
+  overflow-y: auto;
+}
+
+.home::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar.close~.home {

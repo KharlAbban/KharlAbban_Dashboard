@@ -14,4 +14,8 @@ homeRouter.use("/recipes", recipeRouter);
 homeRouter.get("*", checkCurrentUser);
 homeRouter.get("/", homeController.showDashboard);
 
+homeRouter.get("*", (req, res) => {
+    res.render("errors/home_404");
+});
+
 module.exports = homeRouter;
